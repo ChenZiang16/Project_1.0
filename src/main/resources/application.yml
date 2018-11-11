@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  context-path: /springboot
+  
+  
+spring:
+   mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+   datasource:
+      url: jdbc:mysql://localhost:3306/project
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root!@#
+      type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.entry 
+  
+
+
